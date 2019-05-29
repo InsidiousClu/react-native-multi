@@ -12,12 +12,12 @@ const instructions = Platform.select({
 export default class App extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Header />
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
+      <React.Fragment>
+        <Header style={{ height: 80, width: '100%' }} />
+        <Text style={styles.welcome}>Welcome to React!</Text>
         <Text style={styles.instructions}>To get started, edit App.js</Text>
         <Text style={styles.instructions}>{instructions}</Text>
-      </View>
+      </React.Fragment>
     );
   }
 }
