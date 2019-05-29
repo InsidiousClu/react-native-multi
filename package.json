@@ -8,6 +8,8 @@
     "web": "webpack-dev-server --config web/buildtools/webpack.config.js"
   },
   "dependencies": {
+    "native-base": "^2.12.1",
+    "native-base-web": "codejamninja/native-base-web#npm",
     "react": "16.8.3",
     "react-dom": "^16.8.6",
     "react-native": "0.59.8",

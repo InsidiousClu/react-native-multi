@@ -6,10 +6,7 @@ const rootDir = path.resolve(__dirname, '..', '../');
 
 const babelLoaderConfiguration = {
   test: /\.js$/,
-  include: [
-    path.resolve(rootDir, 'index.js'),
-    path.resolve(rootDir, 'src'),
-  ],
+  include: [path.resolve(rootDir, 'index.js'), path.resolve(rootDir, 'src')],
   use: {
     loader: 'babel-loader',
     options: {
@@ -34,7 +31,7 @@ module.exports = {
   output: {
     filename: 'bundle.web.js',
     path: path.resolve(rootDir, 'dist'),
-    publicPath: '/'
+    publicPath: '/',
   },
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
@@ -51,6 +48,9 @@ module.exports = {
   resolve: {
     alias: {
       'react-native$': 'react-native-web',
+      'native-base': 'native-base-web',
+      'react/lib/ReactNativePropRegistry':
+        'react-native-web/dist/modules/ReactNativePropRegistry',
     },
     extensions: ['.web.js', '.js'],
   },
