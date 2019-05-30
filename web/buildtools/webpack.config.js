@@ -6,12 +6,17 @@ const rootDir = path.resolve(__dirname, '..', '../');
 
 const babelLoaderConfiguration = {
   test: /\.js$/,
-  include: [path.resolve(rootDir, 'index.js'), path.resolve(rootDir, 'src')],
+  include: [
+    path.resolve(rootDir, 'index.js'),
+    path.resolve(rootDir, 'src'),
+    /node_modules\/native-base-/,
+    /node_modules\/react-native-/,
+  ],
   use: {
     loader: 'babel-loader',
     options: {
       presets: ['@babel/env', '@babel/react'],
-      plugins: ['react-native-web'],
+      plugins: ['react-native-web', '@babel/proposal-class-properties'],
     },
   },
 };
@@ -47,8 +52,7 @@ module.exports = {
   ],
   resolve: {
     alias: {
-      'react-native$': 'react-native-web',
-      'native-base': 'native-base-web',
+      'react-native': 'react-native-web',
       'react/lib/ReactNativePropRegistry':
         'react-native-web/dist/modules/ReactNativePropRegistry',
     },
